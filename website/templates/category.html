@@ -1,0 +1,137 @@
+{%extends 'base.html'%}
+{% load static  %}
+{% block content %}
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+        <div class="container">
+
+            <!--Section: Cards-->
+            <section class="pt-4 ">
+
+                <!-- Heading & Description -->
+                <div class="wow fadeIn">
+                    <!--Section heading-->
+                    <div class="row mb-5">
+                        <div class="col-12 col-sm-6">
+                            <h2 class="h3">{{titulo}}</h2>
+                        </div>
+                        <div class="col-0 col-sm-3"></div>
+                        <div class="col-12 col-sm-3 mt-sm-0 mt-2 ">
+                                <form class="form-inline" id="pesquisa_form" action="/pesquisa" method="POST" > {% csrf_token %}
+                                    <i class="fa fa-search" aria-hidden="true" onclick="$('#pesquisa_form').submit();"></i>
+                                    <input class="form-control form-control-sm ml-3" type="text" placeholder="Search" aria-label="Search" id="pesquisar" name="texto_pesquisa" value="{{texto_pesquisa}}">
+                                    <input name="tipo_categoria" value="{{titulo}}" hidden>
+                                    <input type="submit" style="position: absolute; left: -9999px"/>
+                                    
+                                </form>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Heading & Description -->
+                {%if posts%}
+                {%for post in posts%}
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-xl-4 mb-4">
+                    <!--Featured image-->
+                        <div class="view overlay rounded z-depth-1">
+                            <img src="{{post.imagem.url}}" class="img-fluid" style="height:250px !important;" alt="{{post.titulo}}">
+                            <a href="" target="_blank">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+                        <h3 class="mb-3 font-weight-bold dark-grey-text">
+                            <strong>{{post.titulo}}</strong>
+                        </h3>
+                        <p class="grey-text">{{post.descricao}}</p>
+                        <p>
+                           
+                        </p>
+                        <a href="post-page.html" target="_blank" class="btn btn-primary btn-md">Leia mais
+                            <i class="fa fa-play ml-2"></i>
+                        </a>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <hr class="mb-5">
+
+         
+                {%endfor%}
+                {%else%}
+                <div class="row wow fadeIn">
+                    <div class="col-12">
+                        <h4>Nenhuma postagem foi encontrada :(   </h4>
+                    </div>
+                </div>
+                
+                {%endif%}
+                <!--Pagination-->
+                <nav class="d-flex justify-content-center wow fadeIn">
+                {% if posts.has_other_pages %}
+                   <ul class="pagination pg-blue">
+                    {% if posts.has_previous %}
+                       <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for i in posts.paginator.page_range %}
+                      {% if posts.number == i %}
+                       <li class="page-item active">
+                            <a class="page-link" href="#">{{i}}
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                      {% else %}
+                        <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                    {% if posts.has_next %}
+                        <li class="page-item">
+                            <a class="page-link"  href="?page={{ posts.next_page_number }}"aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </li>
+                      
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </li>
+
+                    {% endif %}
+                  </ul>
+                {% endif %}
+                </nav>
+                
+                <!--Pagination-->
+
+            </section>
+            <!--Section: Cards-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+{% endblock %}
