@@ -148,4 +148,6 @@ def page(request, num="1"):
         post = Post.objects.filter(id=num)
     except:
         pass
-    return render(request, 'post-page.html',{'post':post[0]})
+    #Post_popular
+    post_popular = Post.objects.all().order_by('data')[:8]
+    return render(request, 'post-page.html',{'post':post[0],'post_popular':post_popular})
