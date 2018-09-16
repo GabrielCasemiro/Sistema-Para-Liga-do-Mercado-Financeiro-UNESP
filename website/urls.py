@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^categoria_destaques', views.categoria_destaques, name='destaque'),
     url(r'^categoria_cursos', views.categoria_cursos, name='curso'),
     url(r'^categoria_eventos', views.categoria_eventos, name='eventos'),
-    url(r'^page/(?P<num>[0-9]+)/$', views.page),
+    url(r'^page/(?P<num>[0-9]+)', views.page),
     url(r'^pesquisa', views.pesquisa, name='pesquisa'),
     url(r'^contato', views.contato, name='contato'),
     url(r'', views.index, name='index'),
