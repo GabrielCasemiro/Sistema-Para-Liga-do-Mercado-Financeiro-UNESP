@@ -1,8 +1,29 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
-from utils import strip_accents
+import re
+import unicodedata
+
+def strip_accents(text):
+    """
+    Strip accents from input String.
+
+    :param text: The input string.
+    :type text: String.
+
+    :returns: The processed String.
+    :rtype: String.
+    """
+    try:
+        text = unicode(text, 'utf-8')
+    except (TypeError, NameError): # unicode is a default on python 3 
+        pass
+    text = unicodedata.normalize('NFD', text)
+    text = text.encode('ascii', 'ignore')
+    text = text.decode("utf-8")
+    return str(text)
+
 # Create your models here.
 
 
@@ -18,7 +39,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=100)
     imagem = models.ImageField(null=True, blank=True, upload_to="postagem/",default="#")
     descricao =  models.CharField(max_length=200, default="Descrição")
-    conteudo = RichTextField()
+    conteudo = RichTextUploadingField(config_name='default')
     data = models.DateTimeField(auto_now_add=True)
     #author = models.ForeignKey(User)
     TIPO_POST = (

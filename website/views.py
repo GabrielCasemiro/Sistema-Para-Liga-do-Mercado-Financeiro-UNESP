@@ -3,9 +3,30 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.db.models import Q
-from utils import strip_accents
 from .models import Banner, Post
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import re
+import unicodedata
+
+def strip_accents(text):
+    """
+    Strip accents from input String.
+
+    :param text: The input string.
+    :type text: String.
+
+    :returns: The processed String.
+    :rtype: String.
+    """
+    try:
+        text = unicode(text, 'utf-8')
+    except (TypeError, NameError): # unicode is a default on python 3 
+        pass
+    text = unicodedata.normalize('NFD', text)
+    text = text.encode('ascii', 'ignore')
+    text = text.decode("utf-8")
+    return str(text)
+
 # Create your views here.
 def index(request):
     #BANNERS
@@ -119,6 +140,8 @@ def pesquisa(request):
 def galeria(request):
     return render(request, 'galery.html')
 
+def contato(request):
+    return render(request, 'contato.html')
 
 def page(request, num="1"):
     try:

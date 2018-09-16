@@ -27,7 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full'
+    },
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
-    'ckeditor'
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -118,7 +123,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+CKEDITOR_UPLOAD_PATH = "uploads/"
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/gabriel/lmf/website/static/'
 MEDIA_URL = '/static/img/'
-MEDIA_ROOT = '/home/gabriel/lmf/website/static/img/'
+MEDIA_ROOT = '/home/gabriel/Desktop/lmf/website/static/img/'
