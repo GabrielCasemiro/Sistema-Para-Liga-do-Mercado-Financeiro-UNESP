@@ -25,7 +25,7 @@ SECRET_KEY = 'sr&z@%vq4$y^@$^5k#=(*@^u$!iip5=@f*1=e952%$&wo^@cuz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ligademercadofinanceiro.pythonanywhere.com']
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -125,6 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 CKEDITOR_UPLOAD_PATH = "uploads/"
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/gabriel/lmf/website/static/'
+STATIC_ROOT = '/home/ligademercadofinanceiro/ligademercadofinanceiro.pythonanywhere.com/static/'
 MEDIA_URL = '/static/img/'
-MEDIA_ROOT = '/home/gabriel/Desktop/lmf/website/static/img/'
+MEDIA_ROOT = '/home/ligademercadofinanceiro/ligademercadofinanceiro.pythonanywhere.com/static/img/'
