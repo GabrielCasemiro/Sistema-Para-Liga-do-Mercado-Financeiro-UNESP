@@ -6,6 +6,7 @@ from django.db.models import Q
 from .models import Banner, Post
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import re
+from django.core.mail import send_mail
 import unicodedata
 
 def strip_accents(text):
@@ -151,3 +152,19 @@ def page(request, num="1"):
     #Post_popular
     post_popular = Post.objects.all().order_by('data')[:8]
     return render(request, 'post-page.html',{'post':post[0],'post_popular':post_popular})
+
+def enviar_email(request):
+    nome = request.POST.get('name','')
+    assunto = request.POST.get('assunto','')
+    email = request.POST.get('email','')
+    mensagem = request.POST.get('mensagem','')
+    if assunto and email and mensagem:
+        send_mail(
+        assunto,
+        mensagem,
+        email,
+        ['gabrielcasemiro68@gmail.com'],
+        fail_silently=False,
+        )
+    status = "Mensagem enviada com sucesso"
+    return render(request, 'contato.html',{"mensagem":status})
