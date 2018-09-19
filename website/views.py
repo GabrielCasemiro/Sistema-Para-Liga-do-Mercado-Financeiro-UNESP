@@ -158,12 +158,13 @@ def enviar_email(request):
     assunto = request.POST.get('assunto','')
     email = request.POST.get('email','')
     mensagem = request.POST.get('mensagem','')
+    mensagem_enviada = "Contato feito pelo site da LMF \nNome: " + str(nome) + " \n" + "Email : " + str(email) + " \n" + "Mensagem: " + str(mensagem)
     if assunto and email and mensagem:
         send_mail(
         assunto,
-        mensagem,
+        mensagem_enviada,
         email,
-        ['gabrielcasemiro68@gmail.com'],
+        ['contato@lmfunesp.com.br'],
         fail_silently=False,
         )
     status = "Mensagem enviada com sucesso"

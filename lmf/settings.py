@@ -25,9 +25,14 @@ SECRET_KEY = 'sr&z@%vq4$y^@$^5k#=(*@^u$!iip5=@f*1=e952%$&wo^@cuz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['ligademercadofinanceiro.pythonanywhere.com']
 #ALLOWED_HOSTS = []
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gabrielcasemiro68@gmail.com'
+EMAIL_HOST_PASSWORD = 'C@semiro65'
+EMAIL_PORT = 587
 
 CKEDITOR_CONFIGS = {
     'default': {
