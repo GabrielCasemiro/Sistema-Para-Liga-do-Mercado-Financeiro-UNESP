@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.db.models import Q
-from .models import Banner, Post
+from .models import Banner, Post, Membro, Foto
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import re
 from django.core.mail import send_mail
@@ -169,3 +169,28 @@ def enviar_email(request):
         )
     status = "Mensagem enviada com sucesso"
     return render(request, 'contato.html',{"mensagem":status})
+
+def newsletter(request):
+    nome = request.POST.get('name','')
+    assunto = "Nova assinatura Newsletter LMF"
+    email = request.POST.get('email','')
+    mensagem_enviada = "Nova assinatura de Newsletter feita por \nNome: " + str(nome) + " \n" + "Email : " + str(email)
+    if nome and email:
+        send_mail(
+        assunto,
+        mensagem_enviada,
+        email,
+        ['contato@lmfunesp.com.br'],
+        fail_silently=False,
+        )
+    return render(request, 'sucesso.html')
+
+def nossotime(request):
+    membros = Membro.objects.all()
+    return render(request, 'nosso-time.html',{'membros':membros})
+
+def galeria(request):
+    fotos = Foto.objects.all()
+    cursos = fotos.filter(categoria="Cursos")
+    eventos = fotos.filter(categoria="Eventos")
+    return render(request, 'gallery.html',{'cursos':cursos,"eventos":eventos})

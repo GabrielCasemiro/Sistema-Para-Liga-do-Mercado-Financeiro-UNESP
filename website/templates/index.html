@@ -376,23 +376,25 @@
                                 <p class="font-small text-center">Fique por dentro de tudo que acontece na LMF Unesp.</p>
 
                                 <!-- Body -->
+                                <form method="POST" action="/newsletter">{% csrf_token %}
                                 <div class="md-form">
                                     <i class="fa fa-user prefix grey-text"></i>
-                                    <input type="text" id="form3" class="form-control">
+                                    <input type="text" id="name" name="name" class="form-control">
                                     <label for="form3">Seu nome</label>
                                 </div>
 
                                 <div class="md-form">
                                     <i class="fa fa-envelope prefix grey-text"></i>
-                                    <input type="text" id="form2" class="form-control">
+                                    <input type="text" id="email" name="email" class="form-control">
                                     <label for="form2">Seu e-mail</label>
                                 </div>
 
                                 <div class="text-center">
                                     <button class="btn btn-primary">Enviar</button>
                                 </div>
-
+                                </form>
                             </div>
+                            
                         </div>
 
                     </section>

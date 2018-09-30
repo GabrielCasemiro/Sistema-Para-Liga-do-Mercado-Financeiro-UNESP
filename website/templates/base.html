@@ -27,7 +27,30 @@
       body{
           overflow-x: hidden;
       }
-      
+          
+    .img-fluid2{
+      width: 100%;
+      height: 350px;  
+    }
+    /* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
   </style>
 </head>
 
@@ -59,10 +82,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_blank">Nosso Time</a>
+            <a class="nav-link waves-effect" href="/nosso-time">Nosso Time</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="#" target="_blank">Fotos</a>
+            <a class="nav-link waves-effect" href="/galeria" >Fotos</a>
           </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -174,6 +197,25 @@
     <script type="text/javascript">
         // Animations initialization
         new WOW().init();
+      $("#all").click(function(){
+        $(".all").show();
+      });
+      $("#1").click(function(){
+        $(".1").show();
+        $(".2").hide();
+      });
+      $("#2").click(function(){
+
+        $(".2").show();
+        $(".1").hide();
+      });
+      $(function() {
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+    });
+      
     </script>
 </body>
 

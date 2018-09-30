@@ -30,8 +30,8 @@ ALLOWED_HOSTS = ['ligademercadofinanceiro.pythonanywhere.com']
 #ALLOWED_HOSTS = []
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'gabrielcasemiro68@gmail.com'
-EMAIL_HOST_PASSWORD = 'C@semiro65'
+EMAIL_HOST_USER = 'contatositelmf@gmail.com'
+EMAIL_HOST_PASSWORD = 'gestao2018liga'
 EMAIL_PORT = 587
 
 CKEDITOR_CONFIGS = {

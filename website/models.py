@@ -51,4 +51,28 @@ class Post(models.Model):
     )
     tipo_post = models.CharField(max_length=25, choices=TIPO_POST)
     def __str__(self):
-        return strip_accents(self.titulo) + ' - ' + strip_accents(self.tipo_post)
+        return strip_accents(self.titulo)
+    
+class Membro(models.Model):
+    nome = models.CharField(max_length=100,default="nome")
+    imagem = models.ImageField(null=True, blank=True, upload_to="membros/",default="#")
+    cargo = models.CharField(max_length=150,default="cargo")
+    descricao =  models.CharField(max_length=300, default="Descrição")
+
+    facebook = models.CharField(max_length=100,blank=True)
+    instagram = models.CharField(max_length=100,blank=True)
+    linkedin = models.CharField(max_length=100,blank=True)
+    
+    def __str__(self):
+        return strip_accents(self.nome)
+    
+class Foto(models.Model):
+    imagem = models.ImageField(null=True, blank=True, upload_to="membros/", default="#")
+    descricao =  models.CharField(max_length=100, default="Descrição", blank=True)
+    TIPO_POST = (
+        ('Eventos', 'Eventos'),
+        ('Cursos', 'Cursos')
+    )
+    categoria =  models.CharField(max_length=25, choices=TIPO_POST,default="Eventos")
+    def __str__(self):
+        return strip_accents(self.descricao)

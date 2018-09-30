@@ -183,17 +183,17 @@
                             <div class="card-body">
 
                                 <!-- Default form login -->
-                                <form>
+                                <form method="POST" action="/newsletter">{% csrf_token %}
 
                                     <!-- Default input email -->
-                                    <label for="defaultFormEmailEx" class="grey-text">Seu e-mail</label>
-                                    <input type="email" id="defaultFormLoginEmailEx" class="form-control">
+                                    <label for="defaultFormEmailEx" class="grey-text" >Seu e-mail</label>
+                                    <input type="email" id="defaultFormLoginEmailEx" name="email"class="form-control">
 
                                     <br>
 
                                     <!-- Default input password -->
-                                    <label for="defaultFormNameEx" class="grey-text">Seu nome</label>
-                                    <input type="text" id="defaultFormNameEx" class="form-control">
+                                    <label for="defaultFormNameEx" class="grey-text" >Seu nome</label>
+                                    <input type="text" id="defaultFormNameEx" name="name" class="form-control">
 
                                     <div class="text-center mt-4">
                                         <button class="btn btn-info btn-md" type="submit">Enviar</button>

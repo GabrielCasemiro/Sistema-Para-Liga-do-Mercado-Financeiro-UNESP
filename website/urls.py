@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'^page/(?P<num>[0-9]+)', views.page),
     url(r'^pesquisa', views.pesquisa, name='pesquisa'),
     url(r'^contato', views.contato, name='contato'),
+    url(r'^nosso-time', views.nossotime, name='nossotime'),
+    url(r'^galeria', views.galeria, name='galeria'),
     url(r'^mail', views.enviar_email, name='email'),
+    url(r'^newsletter', views.newsletter, name='newsletter'),
     url(r'', views.index, name='index'),
 ]
