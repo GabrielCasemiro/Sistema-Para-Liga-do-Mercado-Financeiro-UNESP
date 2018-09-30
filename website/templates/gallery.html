@@ -30,15 +30,19 @@
             {%for curso in cursos%}
               <!-- Grid column -->
             <div class="row">
-              <div class="col-12 col-sm-6 col-md-3 pics animation all 1 animate-bottom mb-3">
-                  <img class="img-fluid z-depth-2 z-depth-2" src="{{curso.imagem.url}}" title="{{imagem.descricao}}">
+              <div class="col-12 col-sm-6 pics animation all 1 animate-bottom mb-3">
+                  <a href="#" class="pop">
+                    <img class="img-fluid z-depth-2 z-depth-2" src="{{curso.imagem.url}}" title="{{imagem.descricao}}">
+                  </a>
               </div>
               <!-- Grid column -->
             {%endfor %}
             {%for evento in eventos%}
               <!-- Grid column -->
-              <div class="col-12 col-sm-6 col-md-3 pics animation all 2 animate-bottom">
+              <div class="col-12 col-sm-6 pics animation all 2 animate-bottom">
+                <a href="#" class="pop">
                   <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" alt="{{evento.descricao}}">
+                </a>
               </div>
               <!-- Grid column -->
             {%endfor%}
@@ -54,5 +58,16 @@
       <br>
       {%endif%}
     </main>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 80%;">
+    <div class="modal-content">              
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" class="imagepreview" style="width: 100%;" >
+      </div>
+    </div>
+  </div>
+</div>
     <!--Main layout-->
 {%endblock%}
