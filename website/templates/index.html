@@ -220,60 +220,11 @@
                         </div>
                         <!--/Grid row-->
                         {%endif%}
-                        {% if cursos %}
-                        <a href="/categoria_cursos" style="color:black !important;">
-                            <h4 class="font-weight-bold">
-                                <strong>CURSOS</strong></h4>
-                            </a>
-                        <hr class="red title-hr">
-
-                        <!--Grid row-->
-                        <div class="row single-post mb-4">
-                            {%for curso in cursos%}
-                            <!--Grid column-->
-                            <div class="col-md-6 text-left mt-3">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="{{curso.imagem.url}}" class="card-img-top" style="height:150px !important;" alt="{{curso.titulo}}">
-                                        <a href="/page/{{curso.id}}">
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong>{{curso.titulo}}</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">
-                                            {{curso.descricao}}
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> {{curso.data}}</p>
-                                        <!-- <p class="font-small grey-text mb-0">Rodrigo</p> -->
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a href="page/{{curso.id}}">Leia mais <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-                                    
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-                            {%endfor%}
-
-
-                        </div>
-                        <!--/Grid row-->
-                     {%endif%}
+     
                     {% if eventos %}
                         <a href="/categoria_eventos" style="color:black !important;">
                             <h4 class="font-weight-bold">
-                                <strong>EVENTOS</strong></h4>
+                                <strong>Cursos e Eventos</strong></h4>
                             </a>
                         <hr class="red title-hr">
 
