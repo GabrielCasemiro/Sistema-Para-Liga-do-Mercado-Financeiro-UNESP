@@ -95,11 +95,10 @@ def categoria_destaques(request):
     return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
 
 def categoria_cursos(request):
-    posts = Post.objects.filter(tipo_post='Cursos').order_by('data')
-    titulo = "Cursos"
+    posts = Post.objects.filter(tipo_post='Cursos e Eventos').order_by('data')
+    titulo = "Cursos e Eventos"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
-    #import pdb; pdb.set_trace()
     try:
         postagens = paginator.page(page)
     except PageNotAnInteger:
@@ -107,19 +106,7 @@ def categoria_cursos(request):
     except EmptyPage:
         postagens = paginator.page(paginator.num_pages)
     return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
-def categoria_eventos(request):
-    posts = Post.objects.filter(tipo_post='Eventos').order_by('data')
-    titulo = "Eventos"
-    page = request.GET.get('page', 1)
-    paginator = Paginator(posts, 10)
-    #import pdb; pdb.set_trace()
-    try:
-        postagens = paginator.page(page)
-    except PageNotAnInteger:
-        postagens = paginator.page(1)
-    except EmptyPage:
-        postagens = paginator.page(paginator.num_pages)
-    return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
+
 #PESQUISA
 def pesquisa(request):
     tipo_categoria = request.POST.get('tipo_categoria','Editorial')

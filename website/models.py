@@ -46,8 +46,7 @@ class Post(models.Model):
         ('Artigos', 'Artigos'),
         ('Destaques da Semana', 'Destaques da Semana'),
         ('Editorial', 'Editorial'),
-        ('Cursos', 'Cursos'),
-        ('Eventos', 'Eventos')
+        ('Cursos e Eventos', 'Cursos e Eventos')
     )
     tipo_post = models.CharField(max_length=25, choices=TIPO_POST)
     def __str__(self):
@@ -58,7 +57,6 @@ class Membro(models.Model):
     imagem = models.ImageField(null=True, blank=True, upload_to="membros/",default="#")
     cargo = models.CharField(max_length=150,default="cargo")
     descricao =  models.CharField(max_length=300, default="Descrição")
-
     facebook = models.CharField(max_length=100,blank=True)
     instagram = models.CharField(max_length=100,blank=True)
     linkedin = models.CharField(max_length=100,blank=True)
