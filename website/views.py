@@ -48,7 +48,7 @@ def index(request):
     #EVENTOS
     eventos = Post.objects.filter(tipo_post="Eventos").order_by('-data')[:3]
     #Post_popular
-    post_popular = Post.objects.all().order_by('data')[:8]
+    post_popular = Post.objects.all().order_by('-data')[:8]
     return render(request, 'index.html',{'primeiro_banner':primeiro_banner,'banners':banners,'editoriais': editoriais,'cursos':cursos,'artigos':artigos,'destaques':destaques,'eventos':eventos,'post_popular':post_popular})
 #CATEGORIAS
 def categoria_editorial(request):
