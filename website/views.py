@@ -7,7 +7,7 @@ from .models import Banner, Post, Membro, Foto
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import re
 from django.core.mail import send_mail
-import unicode-data
+import unicodedata
 
 def strip_accents(text):
     """
@@ -23,7 +23,7 @@ def strip_accents(text):
         text = unicode(text, 'utf-8')
     except (TypeError, NameError): # unicode is a default on python 3 
         pass
-    text = unicode-data.normalize('NFD', text)
+    text = unicodedata.normalize('NFD', text)
     text = text.encode('ascii', 'ignore')
     text = text.decode("utf-8")
     return str(text)
@@ -48,11 +48,11 @@ def index(request):
     #EVENTOS
     eventos = Post.objects.filter(tipo_post="Eventos").order_by('-data')[:3]
     #Post_popular
-    post_popular = Post.objects.all().order_by('-data')[:8]
+    post_popular = Post.objects.all().order_by('data')[:8]
     return render(request, 'index.html',{'primeiro_banner':primeiro_banner,'banners':banners,'editoriais': editoriais,'cursos':cursos,'artigos':artigos,'destaques':destaques,'eventos':eventos,'post_popular':post_popular})
 #CATEGORIAS
 def categoria_editorial(request):
-    posts = Post.objects.filter(tipo_post='Editorial').order_by('-data')
+    posts = Post.objects.filter(tipo_post='Editorial').order_by('data')
     titulo = "Editorial"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
@@ -67,7 +67,7 @@ def categoria_editorial(request):
     return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
 
 def categoria_artigos(request):
-    posts = Post.objects.filter(tipo_post='Artigos').order_by('-data')
+    posts = Post.objects.filter(tipo_post='Artigos').order_by('data')
     titulo = "Artigos"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
@@ -81,7 +81,7 @@ def categoria_artigos(request):
     return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
 
 def categoria_destaques(request):
-    posts = Post.objects.filter(tipo_post='Destaques da Semana').order_by('-data')
+    posts = Post.objects.filter(tipo_post='Destaques da Semana').order_by('data')
     titulo = "Destaques da Semana"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
@@ -95,7 +95,7 @@ def categoria_destaques(request):
     return render(request, 'category.html',{'posts':postagens,'titulo':titulo})
 
 def categoria_cursos(request):
-    posts = Post.objects.filter(tipo_post='Cursos e Eventos').order_by('--data')
+    posts = Post.objects.filter(tipo_post='Cursos e Eventos').order_by('data')
     titulo = "Cursos e Eventos"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
@@ -111,7 +111,7 @@ def categoria_cursos(request):
 def pesquisa(request):
     tipo_categoria = request.POST.get('tipo_categoria','Editorial')
     texto_pesquisa = request.POST.get('texto_pesquisa','')
-    posts = Post.objects.filter(Q(tipo_post=tipo_categoria, titulo__icontains=strip_accents(texto_pesquisa))|Q(tipo_post=tipo_categoria, descricao__icontains=strip_accents(texto_pesquisa))).order_by('-data')
+    posts = Post.objects.filter(Q(tipo_post=tipo_categoria, titulo__icontains=strip_accents(texto_pesquisa))|Q(tipo_post=tipo_categoria, descricao__icontains=strip_accents(texto_pesquisa))).order_by('data')
     
     page = request.GET.get('page', 10)
     paginator = Paginator(posts, 10)
@@ -137,7 +137,7 @@ def page(request, num="1"):
     except:
         pass
     #Post_popular
-    post_popular = Post.objects.all().order_by('-data')[:8]
+    post_popular = Post.objects.all().order_by('data')[:8]
     return render(request, 'post-page.html',{'post':post[0],'post_popular':post_popular})
 
 def enviar_email(request):
