@@ -177,7 +177,7 @@ def nossotime(request):
     return render(request, 'nosso-time.html',{'membros':membros})
 
 def galeria(request):
-    fotos = Foto.objects.all()
+    fotos = Foto.objects.all().order_by('-id')
     cursos = fotos.filter(categoria="Cursos")
-    eventos = fotos.filter(categoria="Eventos")
+    eventos = fotos.filter(categoria="Eventos").order_by('-id')
     return render(request, 'gallery.html',{'cursos':cursos,"eventos":eventos})

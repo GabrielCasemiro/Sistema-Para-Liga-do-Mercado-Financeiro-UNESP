@@ -30,19 +30,25 @@
             <div class="row">
             {%for curso in cursos%}
               <!-- Grid column -->
-              <div class="col-12 col-sm-6 pics animation all 1 animate-bottom mb-3">
+              <div class="col-12 col-sm-6 pics animation all 1 mt-3 animate-bottom mb-3">
+                <figure class="figure">
                   <a href="#" class="pop">
                     <img class="img-fluid z-depth-2 z-depth-2" src="{{curso.imagem.url}}" title="{{imagem.descricao}}">
                   </a>
+                  <figcaption class="figure-caption text-center mt-4">{{curso.descricao}}</figcaption>
+                </figure>
               </div>
               <!-- Grid column -->
             {%endfor %}
             {%for evento in eventos%}
               <!-- Grid column -->
               <div class="col-12 col-sm-6 pics animation all 2 mt-3 animate-bottom">
+                <figure class="figure">
                 <a href="#" class="pop">
-                  <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" alt="{{evento.descricao}}">
+                  <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" title="{{evento.descricao}}">
                 </a>
+                   <figcaption class="figure-caption text-center mt-4">{{evento.descricao}}</figcaption>
+                </figure>
               </div>
               <!-- Grid column -->
             {%endfor%}
@@ -57,7 +63,7 @@
       </div>
       <br>
       {%endif%}
-                    </div>
+      </div>
     </main>
 
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
