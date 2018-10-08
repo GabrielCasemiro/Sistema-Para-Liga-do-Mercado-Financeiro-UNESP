@@ -27,9 +27,9 @@
 
           <!-- Grid row -->
           <div class="gallery" id="gallery">
+            <div class="row">
             {%for curso in cursos%}
               <!-- Grid column -->
-            <div class="row">
               <div class="col-12 col-sm-6 pics animation all 1 animate-bottom mb-3">
                   <a href="#" class="pop">
                     <img class="img-fluid z-depth-2 z-depth-2" src="{{curso.imagem.url}}" title="{{imagem.descricao}}">
@@ -50,13 +50,14 @@
           </div>
           <!-- Grid row -->
 
-          </div>
+
       {%else%}
       <div class="text-center">
         <h2>Ainda não há fotos cadastradas.</h2>
       </div>
       <br>
       {%endif%}
+                    </div>
     </main>
 
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
