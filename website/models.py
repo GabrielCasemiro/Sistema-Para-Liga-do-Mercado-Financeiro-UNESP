@@ -55,8 +55,8 @@ class Post(models.Model):
 class Membro(models.Model):
     nome = models.CharField(max_length=100,default="nome")
     imagem = models.ImageField(null=True, blank=True, upload_to="membros/",default="#")
-    cargo = models.CharField(max_length=150,default="cargo")
-    descricao =  models.CharField(max_length=300, default="Descrição")
+    cargo = models.CharField(max_length=150,default="cargo",blank=True)
+    descricao =  models.TextField(max_length=600, default="Descrição")
     facebook = models.CharField(max_length=100,blank=True)
     instagram = models.CharField(max_length=100,blank=True)
     linkedin = models.CharField(max_length=100,blank=True)
