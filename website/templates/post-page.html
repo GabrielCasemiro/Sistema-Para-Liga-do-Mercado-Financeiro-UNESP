@@ -31,7 +31,6 @@
 
                         </div>
                         <!--/.Featured Image-->
-
                         <!--Card-->
                         <div class="card mb-4 wow fadeIn">
 
@@ -39,7 +38,12 @@
                             <div class="card-body">
 
 
-                                <p class="h5 my-4">{{post.titulo}}
+                                                        <div class="post-data">
+                            <lead class="font-small mb-1"><i class="fa fa-calendar-o"></i>  {{post.data|date}}</lead>
+                        </div>
+                        <br>
+
+                                <p class="h5 my-4">{{post.titulo}}</p>
 
                                 
                                 {{post.conteudo|safe}}
