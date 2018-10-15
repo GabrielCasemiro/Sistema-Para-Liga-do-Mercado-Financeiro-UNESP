@@ -46,7 +46,7 @@ def index(request):
     #Destaque da Semana
     destaques = Post.objects.filter(tipo_post="Destaques da Semana").order_by('-data')[:2]
     #EVENTOS
-    eventos = Post.objects.filter(tipo_post="Cursos e Eventos").order_by('-data')[:3]
+    eventos = Post.objects.filter(tipo_post="Cursos e Eventos").order_by('-data')[:2]
     #Post_popular
     post_popular = Post.objects.all().order_by('-data')[:8]
     return render(request, 'index.html',{'primeiro_banner':primeiro_banner,'banners':banners,'editoriais': editoriais,'cursos':cursos,'artigos':artigos,'destaques':destaques,'eventos':eventos,'post_popular':post_popular})

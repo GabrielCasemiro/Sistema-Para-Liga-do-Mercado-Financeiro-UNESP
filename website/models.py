@@ -66,7 +66,7 @@ class Membro(models.Model):
     
 class Foto(models.Model):
     imagem = models.ImageField(null=True, blank=True, upload_to="membros/", default="#")
-    descricao =  models.CharField(max_length=100, blank=False, default="Descricao")
+    descricao =  models.CharField(max_length=100, default="Descricao")
     TIPO_POST = (
         ('Eventos', 'Eventos'),
         ('Cursos', 'Cursos')
