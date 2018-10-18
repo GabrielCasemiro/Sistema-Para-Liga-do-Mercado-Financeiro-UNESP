@@ -38,7 +38,7 @@ class Banner(models.Model):
 class Post(models.Model):
     titulo = models.CharField(max_length=100)
     imagem = models.ImageField(null=True, blank=True, upload_to="postagem/",default="#")
-    descricao =  models.CharField(max_length=200, default="Descrição")
+    descricao =  models.CharField(max_length=1500, default="Descrição")
     conteudo = RichTextUploadingField(config_name='default')
     data = models.DateTimeField(auto_now_add=False)
     #author = models.ForeignKey(User)
