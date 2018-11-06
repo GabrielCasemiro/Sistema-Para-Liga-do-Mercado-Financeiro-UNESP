@@ -26,7 +26,7 @@ SECRET_KEY = 'sr&z@%vq4$y^@$^5k#=(*@^u$!iip5=@f*1=e952%$&wo^@cuz'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['ligademercadofinanceiro.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.lmfunesp.com.br','lmfunesp.com.br']
 #ALLOWED_HOSTS = []
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
