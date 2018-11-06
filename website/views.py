@@ -176,6 +176,9 @@ def nossotime(request):
     membros = Membro.objects.all()
     return render(request, 'nosso-time.html',{'membros':membros})
 
+def parceiros(request):
+    return render(request, 'parceiros.html')
+
 def galeria(request):
     fotos = Foto.objects.all().order_by('-id')
     cursos = fotos.filter(categoria="Cursos").order_by('-id')

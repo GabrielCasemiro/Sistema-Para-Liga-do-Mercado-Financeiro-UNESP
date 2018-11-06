@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^nosso-time', views.nossotime, name='nossotime'),
     url(r'^galeria', views.galeria, name='galeria'),
     url(r'^mail', views.enviar_email, name='email'),
+    url(r'^parceiros', views.parceiros, name='parceiros'),
     url(r'^newsletter', views.newsletter, name='newsletter'),
     url(r'', views.index, name='index'),
 ]
