@@ -69,8 +69,11 @@ class Foto(models.Model):
     descricao =  models.CharField(max_length=100, default="Descricao")
     TIPO_POST = (
         ('Eventos', 'Eventos'),
-        ('Cursos', 'Cursos')
+        ('Cursos', 'Cursos'),
+        ('PRIMEIRA','I SEMANA DO MERCADO FINANCEIRO'),
+        ('SEGUNDA','II SEMANA DO MERCADO FINANCEIRO'),
+        ('TERCEIRA','III SEMANA DO MERCADO FINANCEIRO'),
     )
-    categoria =  models.CharField(max_length=25, choices=TIPO_POST,default="Eventos")
+    categoria =  models.CharField(max_length=150, choices=TIPO_POST,default="Eventos")
     def __str__(self):
         return strip_accents(self.descricao)

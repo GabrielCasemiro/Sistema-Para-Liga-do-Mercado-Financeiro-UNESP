@@ -4,7 +4,7 @@
     <!--Main layout-->
     <main class="mt-5 pt-5">
         <div class="container">
-         {%if cursos or eventos%}
+         {%if cursos or eventos or primeiras or segundas or terceiras%}
           <div class="text-center">
             <h2>Alguns dos nossos momentos...</h2>
           </div>
@@ -18,6 +18,11 @@
                 <button type="button" class="btn btn-outline-black waves-effect filter" id="all">Tudo</button>
                   <button type="button" class="btn btn-outline-black waves-effect filter" id="1">Cursos</button>
                   <button type="button" class="btn btn-outline-black waves-effect filter" id="2">Eventos</button>
+              
+                  <button type="button" class="btn btn-outline-black waves-effect filter" id="3">I SEMANA DO MERCADO FINANCEIRO</button>
+                  <button type="button" class="btn btn-outline-black waves-effect filter" id="4">II SEMANA DO MERCADO FINANCEIRO</button>
+                  <button type="button" class="btn btn-outline-black waves-effect filter" id="5">III SEMANA DO MERCADO FINANCEIRO</button>
+
 
               </div>
               <!-- Grid column -->
@@ -52,6 +57,43 @@
               </div>
               <!-- Grid column -->
             {%endfor%}
+            {%for evento in primeiras%}
+              <!-- Grid column -->
+              <div class="col-12 col-sm-6 pics animation all 3 mt-3 animate-bottom">
+                <figure class="figure">
+                <a href="#" class="pop">
+                  <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" title="{{evento.descricao}}">
+                </a>
+                   <figcaption class="figure-caption text-center mt-4">{{evento.descricao}}</figcaption>
+                </figure>
+              </div>
+              <!-- Grid column -->
+            {%endfor%}
+            {%for evento in segundas%}
+              <!-- Grid column -->
+              <div class="col-12 col-sm-6 pics animation all 4 mt-3 animate-bottom">
+                <figure class="figure">
+                <a href="#" class="pop">
+                  <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" title="{{evento.descricao}}">
+                </a>
+                   <figcaption class="figure-caption text-center mt-4">{{evento.descricao}}</figcaption>
+                </figure>
+              </div>
+              <!-- Grid column -->
+            {%endfor%}
+            {%for evento in terceiras%}
+              <!-- Grid column -->
+              <div class="col-12 col-sm-6 pics animation all 5 mt-3 animate-bottom">
+                <figure class="figure">
+                <a href="#" class="pop">
+                  <img class="img-fluid z-depth-2" src="{{evento.imagem.url}}" title="{{evento.descricao}}">
+                </a>
+                   <figcaption class="figure-caption text-center mt-4">{{evento.descricao}}</figcaption>
+                </figure>
+              </div>
+              <!-- Grid column -->
+            {%endfor%}
+              
             </div>
           </div>
           <!-- Grid row -->

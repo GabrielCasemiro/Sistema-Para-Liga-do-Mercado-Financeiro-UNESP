@@ -178,6 +178,10 @@ def nossotime(request):
 
 def galeria(request):
     fotos = Foto.objects.all().order_by('-id')
-    cursos = fotos.filter(categoria="Cursos")
+    cursos = fotos.filter(categoria="Cursos").order_by('-id')
     eventos = fotos.filter(categoria="Eventos").order_by('-id')
-    return render(request, 'gallery.html',{'cursos':cursos,"eventos":eventos})
+    primeiras = fotos.filter(categoria="PRIMEIRA").order_by('-id')
+    segundas = fotos.filter(categoria="SEGUNDA").order_by('-id')
+    terceiras = fotos.filter(categoria="TERCEIRA").order_by('-id')
+
+    return render(request, 'gallery.html',{'cursos':cursos,"eventos":eventos,"primeiras":primeiras,"segundas":segundas,"terceiras":terceiras})

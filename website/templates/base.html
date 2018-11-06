@@ -203,11 +203,40 @@
       $("#1").click(function(){
         $(".1").show();
         $(".2").hide();
+        $(".3").hide();
+        $(".4").hide();
+        $(".5").hide();
       });
+      
       $("#2").click(function(){
-
         $(".2").show();
         $(".1").hide();
+        $(".3").hide();
+        $(".4").hide();
+        $(".5").hide();
+      });
+      $("#3").click(function(){
+        $(".3").show();
+        $(".1").hide();
+        $(".1").hide();
+        $(".2").hide();
+        $(".4").hide();
+        $(".5").hide();
+      });
+      $("#4").click(function(){
+        $(".4").show();
+        $(".1").hide();
+        $(".2").hide();
+        $(".3").hide();
+        $(".5").hide();
+      });
+      $("#5").click(function(){
+        $(".5").show();
+        $(".1").hide();
+        $(".4").hide();
+        $(".2").hide();
+        $(".3").hide();
+
       });
 $(function() {
 		$('.pop').on('click', function() {
