@@ -13,8 +13,9 @@
 </style>
   <meta property="og:url"           content="http://www.lmfunesp.com.br/page/{{post.id}}" />
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="{{post.titulo}}" />
+
   <meta property="og:description"   content="{{post.descricao}}" />
+  <meta property="og:title"         content="{{post.titulo}}" />
   <meta property="og:image"         content="http://www.lmfunesp.com.br/{{post.imagem.url}}" />
     <!--Main layout-->
     <main class="mt-5 pt-5">
@@ -59,6 +60,7 @@
     data-href="http://www.lmfunesp.com.br/page/{{post.id}}"
     data-layout="button_count">
   </div>
+                                <br>
                                                         <div class="post-data">
                             <lead class="font-small mb-1"><i class="fa fa-calendar-o"></i>  {{post.data|date}}</lead>
                         </div>
