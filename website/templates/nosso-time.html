@@ -2,15 +2,30 @@
 {% load static  %}
 {% block content %}
 <style type="text/css">
-  .img {
+.img {
   overflow: hidden;
-  position: relative;
-  height: 290px;
+  max-height: 290px;
 }
-.img img {
+
+.object-fit_fill {
+  object-fit: fill
+}
+
+.fit_contain {
+  object-fit: fill;
   max-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
+}
+
+.object-fit_cover {
+  object-fit: cover
+}
+
+.object-fit_none {
+  object-fit: none
+}
+
+.object-fit_scale-down {
+  object-fit: scale-down
 }
 </style>
     <!--Main layout-->
@@ -24,8 +39,8 @@
             <div class="card">
 
               <!-- Card image -->
-              <div class="view z-depth-1 zoom">
-                <img class="card-img-top img" src="{{membro.imagem.url}}" title="{{membro.nome}}" >
+              <div class="img zoom">
+                <img class="fit_contain" src="{{membro.imagem.url}}" title="{{membro.nome}}" >
 
                   <div class="mask rgba-white-slight"></div>
 
