@@ -4,28 +4,16 @@
 <style type="text/css">
 .img {
   overflow: hidden;
-  max-height: 290px;
+  max-height: 320px;
 }
 
-.object-fit_fill {
-  object-fit: fill
-}
 
 .fit_contain {
   object-fit: fill;
   max-width: 100%;
 }
 
-.object-fit_cover {
-  object-fit: cover
-}
 
-.object-fit_none {
-  object-fit: none
-}
-
-.object-fit_scale-down {
-  object-fit: scale-down
 }
 </style>
     <!--Main layout-->
@@ -39,7 +27,7 @@
             <div class="card">
 
               <!-- Card image -->
-              <div class="img zoom">
+              <div class="img zoom z-depth-1">
                 <img class="fit_contain" src="{{membro.imagem.url}}" title="{{membro.nome}}" >
 
                   <div class="mask rgba-white-slight"></div>
