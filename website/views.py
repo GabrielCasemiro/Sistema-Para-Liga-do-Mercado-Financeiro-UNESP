@@ -151,7 +151,7 @@ def enviar_email(request):
         assunto,
         mensagem_enviada,
         email,
-        ['contato@lmfunesp.com.br'],
+        ['anna.flaviacandido98@gmail.com'],
         fail_silently=False,
         )
     status = "Mensagem enviada com sucesso"
@@ -167,7 +167,7 @@ def newsletter(request):
         assunto,
         mensagem_enviada,
         email,
-        ['contato@lmfunesp.com.br'],
+        ['anna.flaviacandido98@gmail.com'],
         fail_silently=False,
         )
     return render(request, 'sucesso.html')
