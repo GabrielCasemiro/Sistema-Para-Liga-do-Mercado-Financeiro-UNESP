@@ -1,6 +1,18 @@
 {%extends 'base.html'%}
 {% load static  %}
 {% block content %}
+<style type="text/css">
+  .img {
+  overflow: hidden;
+  position: relative;
+  height: 290px;
+}
+.img img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+</style>
     <!--Main layout-->
     <main class="mt-5 pt-5">
       <div class="container">
@@ -13,7 +25,7 @@
 
               <!-- Card image -->
               <div class="view z-depth-1 zoom">
-                <img class="card-img-top " src="{{membro.imagem.url}}" title="{{membro.nome}}" height="300px;">
+                <img class="card-img-top img" src="{{membro.imagem.url}}" title="{{membro.nome}}" >
 
                   <div class="mask rgba-white-slight"></div>
 
