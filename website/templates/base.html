@@ -3,10 +3,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {%if not post%}
     <title>Liga do Mercado Financeiro UNESP</title>
+    {%else%}
+    <title>{{post.titulo}}</title>
+    <meta property="og:url"           content="http://www.lmfunesp.com.br/page/{{post.id}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{post.titulo}}" />
+    <meta property="og:description"   content="{{post.descricao}}" />
+    <meta property="og:image"         content="http://www.lmfunesp.com.br/{{post.imagem.url}}" />
+    {%endif%}
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
