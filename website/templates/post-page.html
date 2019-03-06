@@ -31,9 +31,14 @@
                     <div class="col-md-8 mb-4">
 
                         <!--Featured Image-->
-                        <div class="card mb-4 wow fadeIn">
+                        <div class="card mb-4 wow view fadeIn">
 
-                            <img src="{{post.imagem.url}}" class="img-fluid" alt="{{post.titulo}}" style="height: 400px    !important;">
+              <div class="view z-depth-1">
+                <img class="card-img-top " src="{{post.imagem.url}}" title="{{membro.nome}}" >
+
+                  <div class="mask rgba-white-slight"></div>
+
+              </div>
 
                         </div>
                         <!--/.Featured Image-->

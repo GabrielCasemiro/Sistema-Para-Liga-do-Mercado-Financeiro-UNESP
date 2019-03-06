@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^pesquisa', views.pesquisa, name='pesquisa'),
     url(r'^contato', views.contato, name='contato'),
     url(r'^nosso-time', views.nossotime, name='nossotime'),
+    url(r'^membros-antigos', views.membros_antigos, name='membros_antigos'),
     url(r'^galeria', views.galeria, name='galeria'),
     url(r'^mail', views.enviar_email, name='email'),
     url(r'^parceiros', views.parceiros, name='parceiros'),

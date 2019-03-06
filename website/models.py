@@ -58,6 +58,11 @@ class Membro(models.Model):
     cargo = models.CharField(max_length=150,blank=True)
     descricao =  models.TextField(max_length=600, default="Descrição")
     facebook = models.CharField(max_length=100,blank=True)
+    TIPO_MEMBRO = (
+        ('Membro Novo', 'Membro Novo'),
+        ('Membro Antigo', 'Membro Antigo'),
+    )
+    tipo_membro =  models.CharField(max_length=150, choices=TIPO_MEMBRO,default="Membro Novo")
     instagram = models.CharField(max_length=100,blank=True)
     linkedin = models.CharField(max_length=100,blank=True)
     

@@ -173,7 +173,11 @@ def newsletter(request):
     return render(request, 'sucesso.html')
 
 def nossotime(request):
-    membros = Membro.objects.all()
+    membros = Membro.objects.filter(tipo_membro="Membro Novo")
+    return render(request, 'nosso-time.html',{'membros':membros})
+
+def membros_antigos(request):
+    membros = Membro.objects.filter(tipo_membro="Membro Antigo")
     return render(request, 'nosso-time.html',{'membros':membros})
 
 def parceiros(request):
