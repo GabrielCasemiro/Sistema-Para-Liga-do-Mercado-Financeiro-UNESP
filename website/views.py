@@ -52,7 +52,7 @@ def index(request):
     return render(request, 'index.html',{'primeiro_banner':primeiro_banner,'banners':banners,'editoriais': editoriais,'cursos':cursos,'artigos':artigos,'destaques':destaques,'eventos':eventos,'post_popular':post_popular})
 #CATEGORIAS
 def categoria_editorial(request):
-    posts = Post.objects.filter(tipo_post='Editorial').order_by('data')
+    posts = Post.objects.filter(tipo_post='Editorial').order_by('-data')
     titulo = "Editorial"
     page = request.GET.get('page', 1)
     paginator = Paginator(posts, 10)
@@ -151,7 +151,7 @@ def enviar_email(request):
         assunto,
         mensagem_enviada,
         email,
-        ['contato@lmfunesp.com.br'],
+        ['anna.flaviacandido98@gmail.com'],
         fail_silently=False,
         )
     status = "Mensagem enviada com sucesso"
@@ -167,7 +167,7 @@ def newsletter(request):
         assunto,
         mensagem_enviada,
         email,
-        ['contato@lmfunesp.com.br'],
+        ['anna.flaviacandido98@gmail.com'],
         fail_silently=False,
         )
     return render(request, 'sucesso.html')

@@ -1,6 +1,9 @@
 {%extends 'base.html'%}
 {% load static  %}
 {% block content %}
+<head>
+    <title>{{post.titulo}}</title>
+</head>
 <style>
     .content img {
         max-width: 100%;
@@ -11,12 +14,8 @@
         }
     }
 </style>
-  <meta property="og:url"           content="http://www.lmfunesp.com.br/page/{{post.id}}" />
-  <meta property="og:type"          content="website" />
 
-  <meta property="og:description"   content="{{post.descricao}}" />
-  <meta property="og:title"         content="{{post.titulo}}" />
-  <meta property="og:image"         content="http://www.lmfunesp.com.br/{{post.imagem.url}}" />
+
     <!--Main layout-->
     <main class="mt-5 pt-5">
         <div class="container content">
@@ -288,5 +287,10 @@
 
         </div>
     </main>
+    <script type="text/javascript">
+
+        document.title = "{{post.titulo|safe}}";
+
+    </script>
     <!--Main layout-->
 {%endblock%}

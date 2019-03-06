@@ -1,6 +1,21 @@
 {%extends 'base.html'%}
 {% load static  %}
 {% block content %}
+<style type="text/css">
+.img {
+  overflow: hidden;
+  max-height: 320px;
+}
+
+
+.fit_contain {
+  object-fit: fill;
+  max-width: 100%;
+}
+
+
+}
+</style>
     <!--Main layout-->
     <main class="mt-5 pt-5">
       <div class="container">
@@ -12,8 +27,8 @@
             <div class="card">
 
               <!-- Card image -->
-              <div class="view z-depth-1 zoom">
-                <img class="card-img-top " src="{{membro.imagem.url}}" title="{{membro.nome}}" height="300px;">
+              <div class="img zoom z-depth-1">
+                <img class="fit_contain" src="{{membro.imagem.url}}" title="{{membro.nome}}" >
 
                   <div class="mask rgba-white-slight"></div>
 
