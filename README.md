@@ -21,5 +21,8 @@ O sistema foi desenvolvido em Python utilizando o Framework Django.
 Para armazenamento de dados foi utilizado o SQLite 3.
 Para o Front-end foi utilizado: HTML5, CSS3, Jquery e Bootstrap 4.
 
+# Hospedagem
+O site foi hospedado na PythonAnywhere e sua manutenção é responsabilidade do cliente.
+
 # Site
-[a link](http://www.lmfunesp.com.br/index)
+[http://www.lmfunesp.com.br/](http://www.lmfunesp.com.br/index)
