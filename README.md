@@ -29,7 +29,7 @@ O site foi hospedado na PythonAnywhere e sua manutenção é responsabilidade do
 [http://www.lmfunesp.com.br/](http://www.lmfunesp.com.br/index)
 
 # Imagens do Site
-![Home](src="https://i.ibb.co/Pg6cW5x/Home.png")
+![Home](https://i.ibb.co/Pg6cW5x/Home.png)
 
 ![Artigos](https://i.ibb.co/BBM9VhR/artigos.png)
 
