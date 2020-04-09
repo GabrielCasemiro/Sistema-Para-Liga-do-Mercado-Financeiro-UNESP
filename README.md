@@ -1,11 +1,10 @@
-# 
 
-#Sistema gerencial de postagens feito para a Liga do Mercado Financeiro da UNESP (Araraquara)
+# Sistema gerencial de postagens feito para a Liga do Mercado Financeiro da UNESP (Araraquara)
 
-#DEV
+# Desenvolvedores
 Gabriel Henrique Casemiro
 
-#Descrição
+# Descrição
 O sistema contém o gerenciamento com edição, visualização, exclusão e adição, através de um painel adminstrativo, dos seguintes itens:
 Artigos
 Destaques da Semana
@@ -17,7 +16,7 @@ NEWSLETTER
 Parceiros
 Contato com a equipe através de Formulário
 
-#Desenvolvimento
+# Desenvolvimento
 O sistema foi desenvolvido em Python utilizando o Framework Django.
 Para armazenamento de dados foi utilizado o SQLite 3.
 Para o Front-end foi utilizado: HTML5, CSS3, Jquery e Bootstrap 4.
