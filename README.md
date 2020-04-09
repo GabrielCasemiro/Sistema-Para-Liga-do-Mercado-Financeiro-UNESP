@@ -6,15 +6,16 @@ Gabriel Henrique Casemiro
 
 # Descrição
 O sistema contém o gerenciamento com edição, visualização, exclusão e adição, através de um painel adminstrativo, dos seguintes itens:
-Artigos
-Destaques da Semana
-Cursos e Eventos
-Editoriais 
-Membros da Equipe
-Galeria
-NEWSLETTER
-Parceiros
-Contato com a equipe através de Formulário
+* Artigos
+* Destaques da Semana
+* Cursos e Eventos
+* Editoriais 
+* Membros da Equipe
+* Galeria
+* NEWSLETTER
+* Parceiros
+* Contato com a equipe através de Formulário
+* Gerenciamento de Banners
 
 # Desenvolvimento
 O sistema foi desenvolvido em Python utilizando o Framework Django.
@@ -26,3 +27,10 @@ O site foi hospedado na PythonAnywhere e sua manutenção é responsabilidade do
 
 # Site
 [http://www.lmfunesp.com.br/](http://www.lmfunesp.com.br/index)
+
+# Imagens do Site
+![Artigos](https://ibb.co/2d4T7zB)
+
+https://ibb.co/0QLZY1R
+https://ibb.co/FWzZY2D
+https://ibb.co/JHsvpzn
