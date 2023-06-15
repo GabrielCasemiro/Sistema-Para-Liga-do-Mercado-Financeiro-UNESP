@@ -1,5 +1,6 @@
 
-# Sistema gerencial de postagens feito para a Liga do Mercado Financeiro da UNESP (Araraquara)
+# Sistema-Para-Liga-do-Mercado-Financeiro-UNESP
+Sistema gerencial de postagens feito para a Liga do Mercado Financeiro da UNESP
 
 # Desenvolvedores
 Gabriel Henrique Casemiro
